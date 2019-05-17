@@ -2,7 +2,7 @@ import uuid from 'uuid';
 import initialState from '../store/initialState';
 import * as types from '../actions-types';
 
-const reducer = (state = initialState, { type, payload }) => {
+const reducer = (state = initialState, { type, payload } = {}) => {
   switch (type) {
     case types.CLEAR_TODO:
       return {
