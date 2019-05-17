@@ -14,7 +14,7 @@ import {
   clearTodo,
 } from '../../actions';
 
-class Todos extends Component {
+export class Todos extends Component {
   addNewTodo = () => {
     const { onAddTodo, todoForm, onAddingTodo, onClearTodo } = this.props;
     if (todoForm.text) {
@@ -82,6 +82,7 @@ class Todos extends Component {
                     </div>
                     <div className="column is-3">
                       <button
+                        id="btn-add"
                         className={`button is-fullwidth is-rounded is-info ${
                           adding ? 'is-loading' : ''
                         }`}

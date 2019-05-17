@@ -10,10 +10,16 @@ const SingleTodo = ({ index, content, onDelete, onCheck }) => (
     </div>
     <div className="todo__text">{content.text}</div>
     <div className="todo__actions">
-      <button className="button is-white" onClick={() => onCheck(content.id)}>
+      <button
+        id="btn-check"
+        className="button is-white"
+        onClick={() => onCheck(content.id)}
+      >
         <i className={`fas fa-check-circle ${content.done ? 'active' : ''}`} />
       </button>
       <button
+        id="btn-delete"
+        data-test="btn-delete"
         className={`button is-white ${content.deleting ? 'is-loading' : ''}`}
         onClick={() => onDelete(content.id)}
       >
