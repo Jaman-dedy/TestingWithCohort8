@@ -14,7 +14,7 @@ import {
   clearTodo,
 } from '../../actions';
 
-export class Todos extends Component {
+class Todos extends Component {
   addNewTodo = () => {
     const { onAddTodo, todoForm, onAddingTodo, onClearTodo } = this.props;
     if (todoForm.text) {
@@ -115,13 +115,13 @@ Todos.propTypes = {
   handleInput: propTypes.func.isRequired,
 };
 
-export const mapStateToProps = ({ adding, todoForm, todosList }) => ({
+const mapStateToProps = ({ adding, todoForm, todosList }) => ({
   adding,
   todoForm,
   todosList,
 });
 
-export const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   onAddTodo: payload => dispatch(addTodo(payload)),
   onAddingTodo: payload => dispatch(setAddingTodo(payload)),
   onDeleteTodo: payload => dispatch(deleteTodo(payload)),
